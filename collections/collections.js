@@ -5,4 +5,5 @@ import {
     Mongo
 } from 'meteor/mongo';
 
-Profiles = new Mongo.Collection('profiles');
+QueenInfo = new Mongo.Collection("queeninfo");
+Feedback = new Mongo.Collection("feedback");

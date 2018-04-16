@@ -1,3 +1,47 @@
 <template name="LoginWithInstagram">
     <button id="login">Login with Instagram</button>
 </template>
+
+<template name="FinishAccountSetup">
+    <h2>To finish setting up your account...</h2>
+    <p>What is your drag name? (You can change this later!)</p>
+    <form>
+        <input type="text" name="DNInput" placeholder="e.g. Ben de la Creme">
+        <input type="submit" value="Submit">
+    </form>
+</template>
+
+<template name="EditAccount">
+    <form>
+        <p>Edit drag name:</p>
+        <p><input type="text" value="{{DragName}}" name="NewName"></p>
+        <p><input type="submit" value="Update"></p>
+    </form>
+</template>
+
+<template name="ProfileInfo">
+        <h2>Welcome <b>{{DragName}}</b>!</h2>
+        <img src="{{PictureUrl}}" />
+        <p><button id="EditAccount">Edit Account</button></p>
+    </template>
+
+<template name="Logout">
+    <p><button id="logout">Logout</button></p>
+</template>
+
+<template name="ModeChoice">
+    <p>
+        <button id="STT">Spill the Tea</button>
+        <button id="TTS">Take the Shade</button>
+    </p>
+</template>
+
+<template name="SpillTheTea">
+    <p>Spill the Tea!</p>
+    <p><button id="Back">Back</button></p>
+</template>
+
+<template name="TakeTheShade">
+    <p>Take the Shade!</p>
+    <p><button id="Back">Back</button></p>
+</template>

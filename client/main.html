@@ -1,8 +1,37 @@
 <head>
-  <title>fish</title>
+  <title>Fish</title>
 </head>
 
 <body>
-  <h1>Welcome to Fish!</h1>
-  {{> LoginWithInstagram}}
+  {{> Main}}
 </body>
+
+<template name="Main">
+  <h1>Fish v0.1</h1>
+  {{ #if currentUser }}
+    {{ #if NeedMoreInfo }}
+      {{> FinishAccountSetup }}
+    {{ else }}
+      {{ #if EditAccountEnabled }}
+        {{> EditAccount }}
+      {{ else }}
+        {{> ProfileInfo }}
+
+        {{ #if SpillTheTeaEnabled }}
+          {{> SpillTheTea }}
+        {{ else }}
+          {{ #if TakeTheShadeEnabled }}
+            {{> TakeTheShade}}
+          {{ else }}
+            {{> ModeChoice }}
+          {{ /if }}
+        {{ /if }}
+        
+        {{> Logout }}
+      {{ /if }}
+    {{ /if }}
+
+  {{ else }}
+    {{> LoginWithInstagram }}
+  {{ /if }}
+</template>
